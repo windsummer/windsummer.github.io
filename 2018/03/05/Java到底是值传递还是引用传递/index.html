@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/windsummer">
-  <title>Archives | Windsummer</title>
+  <title>Java到底是值传递还是引用传递 | Windsummer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="/*coding 完美世界*/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Windsummer">
-<meta property="og:url" content="https://github.com/windsummer/archives/index.html">
+  <meta name="description" content="本文参考地址：    String is passed by ‘reference’ in java   Java 到底是值传递还是引用传递？ - Intopass的回答 - 知乎   一、基本类型和引用类型的不同之处12int num = 10;String str = &amp;quot;hello&amp;quot;; num 是基本类型，值就直接保存在变量中。str 是引用类型，变量中保存的是实际对象的地">
+<meta name="keywords" content="Java,基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java到底是值传递还是引用传递">
+<meta property="og:url" content="https://github.com/windsummer/2018/03/05/Java到底是值传递还是引用传递/index.html">
 <meta property="og:site_name" content="Windsummer">
-<meta property="og:description" content="/*coding 完美世界*/">
+<meta property="og:description" content="本文参考地址：    String is passed by ‘reference’ in java   Java 到底是值传递还是引用传递？ - Intopass的回答 - 知乎   一、基本类型和引用类型的不同之处12int num = 10;String str = &amp;quot;hello&amp;quot;; num 是基本类型，值就直接保存在变量中。str 是引用类型，变量中保存的是实际对象的地">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-06T02:38:21.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windsummer">
-<meta name="twitter:description" content="/*coding 完美世界*/">
+<meta name="twitter:title" content="Java到底是值传递还是引用传递">
+<meta name="twitter:description" content="本文参考地址：    String is passed by ‘reference’ in java   Java 到底是值传递还是引用传递？ - Intopass的回答 - 知乎   一、基本类型和引用类型的不同之处12int num = 10;String str = &amp;quot;hello&amp;quot;; num 是基本类型，值就直接保存在变量中。str 是引用类型，变量中保存的是实际对象的地">
   
     <link rel="alternative" href="/atom.xml" title="Windsummer" type="application/atom+xml">
   
@@ -141,36 +143,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Java到底是值传递还是引用传递" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Java到底是值传递还是引用传递
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Java到底是值传递还是引用传递/" class="archive-article-date">
+
+        
+        <a href="/2018/03/05/Java到底是值传递还是引用传递/" class="archive-article-date">
   	<time datetime="2018-03-05T09:52:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Java到底是值传递还是引用传递/">Java到底是值传递还是引用传递</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文参考地址：  </p>
+<ul>
+<li><a href="https://www.programcreek.com/2013/09/string-is-passed-by-reference-in-java/" target="_blank" rel="noopener">String is passed by ‘reference’ in java</a>  </li>
+<li><a href="https://www.zhihu.com/question/31203609/answer/50992895" target="_blank" rel="noopener">Java 到底是值传递还是引用传递？ - Intopass的回答 - 知乎
+</a></li>
+</ul>
+<h4 id="一、基本类型和引用类型的不同之处"><a href="#一、基本类型和引用类型的不同之处" class="headerlink" title="一、基本类型和引用类型的不同之处"></a>一、基本类型和引用类型的不同之处</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int num = 10;</span><br><span class="line">String str = &quot;hello&quot;;</span><br></pre></td></tr></table></figure>
+<p>num 是基本类型，值就直接保存在变量中。<br>str 是引用类型，变量中保存的是实际对象的地址。（一般称这种对象为”引用”，引用指向实际对象，实际对象中保存着内容。）</p>
+<h4 id="二、赋值运算符-的作用"><a href="#二、赋值运算符-的作用" class="headerlink" title="二、赋值运算符=的作用"></a>二、赋值运算符=的作用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num=20;</span><br><span class="line">str =&quot;java&quot;;</span><br></pre></td></tr></table></figure>
+<p>对于基本类型num,赋值运算符会直接改变变量的值，原来的值被覆盖掉。<br>对于引用类型str,赋值运算答会改变引用中所保存的地址，原来的地址被覆盖掉，但是原来的对象不会被改变。（hello字符串对象没有改变，没有被任何引用指向的对象是垃圾会被回收）</p>
+<a id="more"></a>
+<h4 id="三、参数传递基本上就是赋值操作"><a href="#三、参数传递基本上就是赋值操作" class="headerlink" title="三、参数传递基本上就是赋值操作"></a>三、参数传递基本上就是赋值操作</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//1.基本类型  </span><br><span class="line">void change(int value)&#123;  </span><br><span class="line">	value = 100;</span><br><span class="line">&#125;</span><br><span class="line">change(num);//num没有被改变  </span><br><span class="line">//2.引用类型</span><br><span class="line">void change(String text)&#123;  </span><br><span class="line">	text = &quot;windows&quot;;//没有提供改变自身的方法</span><br><span class="line">&#125;</span><br><span class="line">foo(str);//str也没有被改变</span><br></pre></td></tr></table></figure>
+<h4 id="四、局部变量-方法参数理解"><a href="#四、局部变量-方法参数理解" class="headerlink" title="四、局部变量/方法参数理解"></a>四、局部变量/方法参数理解</h4><p>局部变量和方法参数在JVM中的存储方法是相同的，都是在栈上开辟空间存储。进入方法时开辟，退出方法回收。<br>在JVM内存模型中有stack和heap的存在。从线程的角度，每个线程都分配一个独享的stack,所有线程共享heap.<br>当我们在方法中声明一个int i=0,或者object obj = null时，仅仅涉及到stack,不影响到heap,当我们new Object()时，会在heap中开辟一段内存并初始化Object对象，当我们将这个对象赋予给obj变量时，仅仅是stack中代表obj的那4个字节变更为这个对象的地址。</p>
+<h4 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h4><ul>
+<li>1.=是赋值操作</li>
+<li>2.对于基本数据类型变量，=操作完整的复制了变量的值</li>
+<li>3.对于非基本数据类型，=操作是复制了变量的引用 </li>
+<li>4.参数本身是变量，参数传递的本质是一种=操作</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -186,88 +205,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/windsummer/2018/03/05/Java到底是值传递还是引用传递/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/03/Java中String为什么是immutable的/" class="archive-article-date">
-  	<time datetime="2018-03-03T09:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/03/Java中String为什么是immutable的/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中String为什么是immutable的</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/03/Java中String为什么是immutable的/">Java中String为什么是immutable的</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/03/hello-world/" class="archive-article-date">
-  	<time datetime="2018-03-03T02:23:28.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/03/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -290,8 +327,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

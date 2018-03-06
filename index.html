@@ -143,6 +143,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java到底是值传递还是引用传递" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/05/Java到底是值传递还是引用传递/">Java到底是值传递还是引用传递</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/05/Java到底是值传递还是引用传递/" class="archive-article-date">
+  	<time datetime="2018-03-05T09:52:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文参考地址：  </p>
+<ul>
+<li><a href="https://www.programcreek.com/2013/09/string-is-passed-by-reference-in-java/" target="_blank" rel="noopener">String is passed by ‘reference’ in java</a>  </li>
+<li><a href="https://www.zhihu.com/question/31203609/answer/50992895" target="_blank" rel="noopener">Java 到底是值传递还是引用传递？ - Intopass的回答 - 知乎
+</a></li>
+</ul>
+<h4 id="一、基本类型和引用类型的不同之处"><a href="#一、基本类型和引用类型的不同之处" class="headerlink" title="一、基本类型和引用类型的不同之处"></a>一、基本类型和引用类型的不同之处</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int num = 10;</span><br><span class="line">String str = &quot;hello&quot;;</span><br></pre></td></tr></table></figure>
+<p>num 是基本类型，值就直接保存在变量中。<br>str 是引用类型，变量中保存的是实际对象的地址。（一般称这种对象为”引用”，引用指向实际对象，实际对象中保存着内容。）</p>
+<h4 id="二、赋值运算符-的作用"><a href="#二、赋值运算符-的作用" class="headerlink" title="二、赋值运算符=的作用"></a>二、赋值运算符=的作用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num=20;</span><br><span class="line">str =&quot;java&quot;;</span><br></pre></td></tr></table></figure>
+<p>对于基本类型num,赋值运算符会直接改变变量的值，原来的值被覆盖掉。<br>对于引用类型str,赋值运算答会改变引用中所保存的地址，原来的地址被覆盖掉，但是原来的对象不会被改变。（hello字符串对象没有改变，没有被任何引用指向的对象是垃圾会被回收）</p>
+        
+          <a class="article-more-a" href="/2018/03/05/Java到底是值传递还是引用传递/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/05/Java到底是值传递还是引用传递/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java中String为什么是immutable的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
