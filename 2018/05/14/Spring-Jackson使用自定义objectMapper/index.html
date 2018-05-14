@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/windsummer">
-  <title>Java中String为什么是immutable的 | Windsummer</title>
+  <title>Spring Jackson使用自定义objectMapper | Windsummer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.String pool需要String pool(string intern pool)是一个方法区里的特殊的存储区域。当创建一个String,如果它已经在pool中存在，则会返回一存在String引用，相反，则会创建一个新的String,并返回该引用。下面的代码将仅公在堆中创建一个String对象:   12String s1 = &amp;quot;abcd&amp;quot;;String s2 = &amp;">
-<meta name="keywords" content="Java,基础">
+  <meta name="description" content="1.spring-mvc.xml中添加配置1234567891011121314151617181920212223&amp;lt;mvc:annotation-driven &amp;gt;    &amp;lt;mvc:message-converters&amp;gt;        &amp;lt;bean class=&amp;quot;org.springframework.http.converter.json.MappingJa">
+<meta name="keywords" content="Java,Spring,Jackson">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中String为什么是immutable的">
-<meta property="og:url" content="https://github.com/windsummer/2018/03/03/Java中String为什么是immutable的/index.html">
+<meta property="og:title" content="Spring Jackson使用自定义objectMapper">
+<meta property="og:url" content="https://github.com/windsummer/2018/05/14/Spring-Jackson使用自定义objectMapper/index.html">
 <meta property="og:site_name" content="Windsummer">
-<meta property="og:description" content="1.String pool需要String pool(string intern pool)是一个方法区里的特殊的存储区域。当创建一个String,如果它已经在pool中存在，则会返回一存在String引用，相反，则会创建一个新的String,并返回该引用。下面的代码将仅公在堆中创建一个String对象:   12String s1 = &amp;quot;abcd&amp;quot;;String s2 = &amp;">
+<meta property="og:description" content="1.spring-mvc.xml中添加配置1234567891011121314151617181920212223&amp;lt;mvc:annotation-driven &amp;gt;    &amp;lt;mvc:message-converters&amp;gt;        &amp;lt;bean class=&amp;quot;org.springframework.http.converter.json.MappingJa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-03T10:11:14.525Z">
+<meta property="og:updated_time" content="2018-05-14T07:14:02.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中String为什么是immutable的">
-<meta name="twitter:description" content="1.String pool需要String pool(string intern pool)是一个方法区里的特殊的存储区域。当创建一个String,如果它已经在pool中存在，则会返回一存在String引用，相反，则会创建一个新的String,并返回该引用。下面的代码将仅公在堆中创建一个String对象:   12String s1 = &amp;quot;abcd&amp;quot;;String s2 = &amp;">
+<meta name="twitter:title" content="Spring Jackson使用自定义objectMapper">
+<meta name="twitter:description" content="1.spring-mvc.xml中添加配置1234567891011121314151617181920212223&amp;lt;mvc:annotation-driven &amp;gt;    &amp;lt;mvc:message-converters&amp;gt;        &amp;lt;bean class=&amp;quot;org.springframework.http.converter.json.MappingJa">
   
     <link rel="alternative" href="/atom.xml" title="Windsummer" type="application/atom+xml">
   
@@ -143,34 +143,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中String为什么是immutable的" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Spring-Jackson使用自定义objectMapper" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中String为什么是immutable的
+      Spring Jackson使用自定义objectMapper
     </h1>
   
 
         
-        <a href="/2018/03/03/Java中String为什么是immutable的/" class="archive-article-date">
-  	<time datetime="2018-03-03T09:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
+        <a href="/2018/05/14/Spring-Jackson使用自定义objectMapper/" class="archive-article-date">
+  	<time datetime="2018-05-14T07:08:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-String-pool需要"><a href="#1-String-pool需要" class="headerlink" title="1.String pool需要"></a>1.String pool需要</h3><p>String pool(string intern pool)是一个方法区里的特殊的存储区域。当创建一个String,如果它已经在pool中存在，则会返回一存在String引用，相反，则会创建一个新的String,并返回该引用。<br>下面的代码将仅公在堆中创建一个String对象:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;abcd&quot;;</span><br><span class="line">String s2 = &quot;abcd&quot;;</span><br></pre></td></tr></table></figure>
-<p>如果String不是immutable的，改变String的引用将导致另一个引用到错误的值。<br><a id="more"></a></p>
-<h3 id="2-允许String缓存它的hashcode"><a href="#2-允许String缓存它的hashcode" class="headerlink" title="2.允许String缓存它的hashcode"></a>2.允许String缓存它的hashcode</h3><p>String的hashcode在Java中使用是非常频繁的，例如在HashMap中，String设计成immutable保证了hashcode总是一样的，所以hashcode可以被缓存而不用担心改变。也就是说，不需要每次在使用hashcode时都计算一遍，这样理高效。<br>在String类里，代码:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private int hash;//this is used to cache hash code.</span><br></pre></td></tr></table></figure>
-<h3 id="3-安全"><a href="#3-安全" class="headerlink" title="3.安全"></a>3.安全</h3><p>String 广泛作为参数被JAVA中的类使用，比如网络连接，打开的文件等，如果string不是immutable,一个连接或者文件的改变将导致严重的威胁。一个可变的string 还将导致反射的安全性问题。因为反射中的参数都是string类型的。此外，immutable的是线程安全的，</p>
-<p>总之，原因包括设计、安全、效率等方面的考虑。</p>
-
+        <h4 id="1-spring-mvc-xml中添加配置"><a href="#1-spring-mvc-xml中添加配置" class="headerlink" title="1.spring-mvc.xml中添加配置"></a>1.spring-mvc.xml中添加配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;mvc:annotation-driven &gt;</span><br><span class="line">    &lt;mvc:message-converters&gt;</span><br><span class="line">        &lt;bean class=&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;&gt;</span><br><span class="line">            &lt;!-- 解决IE下载JSON文件的问题--&gt;</span><br><span class="line">            &lt;property name=&quot;supportedMediaTypes&quot;&gt;</span><br><span class="line">                &lt;list&gt;</span><br><span class="line">                    &lt;value&gt;application/json;charset=UTF-8&lt;/value&gt;</span><br><span class="line">                    &lt;value&gt;text/html;charset=UTF-8&lt;/value&gt;</span><br><span class="line">                &lt;/list&gt;</span><br><span class="line">            &lt;/property&gt;</span><br><span class="line">            &lt;property name=&quot;objectMapper&quot;&gt;</span><br><span class="line">                &lt;bean class=&quot;com.config.MyObjectMapper&quot;&gt;</span><br><span class="line">                    &lt;property name=&quot;dateFormat&quot;&gt;</span><br><span class="line">                        &lt;bean class=&quot;java.text.SimpleDateFormat&quot;&gt;</span><br><span class="line">                            &lt;constructor-arg type=&quot;java.lang.String&quot; value=&quot;yyyy-MM-dd&quot; /&gt;</span><br><span class="line">                        &lt;/bean&gt;</span><br><span class="line">                    &lt;/property&gt;</span><br><span class="line">                &lt;/bean&gt;</span><br><span class="line">            &lt;/property&gt;</span><br><span class="line">        &lt;/bean&gt;</span><br><span class="line">    &lt;/mvc:message-converters&gt;</span><br><span class="line">&lt;/mvc:annotation-driven&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-自定义的objectMapper"><a href="#2-自定义的objectMapper" class="headerlink" title="2.自定义的objectMapper"></a>2.自定义的objectMapper</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class MyObjectMapper extends ObjectMapper&#123;</span><br><span class="line">    public MyObjectMapper() &#123;</span><br><span class="line">        //设置null值不参与序列化(字段不被显示)</span><br><span class="line">        //this.setSerializationInclusion(JsonInclude.Include.NON_NULL);</span><br><span class="line"></span><br><span class="line">        // 禁用空对象转换json校验</span><br><span class="line">        this.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);</span><br><span class="line">        //忽略对象中没有的字段</span><br><span class="line">        this.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);</span><br><span class="line">        //避免找不到枚举对应值下的异常问题</span><br><span class="line">        this.configure(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL,true);</span><br><span class="line">        SimpleModule simpleModule = new SimpleModule();</span><br><span class="line">        simpleModule.addSerializer(Long.class, ToStringSerializer.instance);</span><br><span class="line">        simpleModule.addSerializer(Long.TYPE,ToStringSerializer.instance);</span><br><span class="line">        this.registerModule(simpleModule);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -187,7 +181,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Jackson</a>
         		</li>
       		
 		</ul>
@@ -243,7 +241,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/windsummer/2018/03/03/Java中String为什么是immutable的/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/windsummer/2018/05/14/Spring-Jackson使用自定义objectMapper/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -257,18 +255,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/05/Java到底是值传递还是引用传递/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java到底是值传递还是引用传递
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2018/03/11/Pdf导出工具wkhtmltopdf的安装使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pdf导出工具wkhtmltopdf的安装使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
