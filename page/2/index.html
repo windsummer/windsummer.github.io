@@ -143,6 +143,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux中安装字体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/Linux中安装字体/">Linux中安装字体</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/Linux中安装字体/" class="archive-article-date">
+  	<time datetime="2018-05-21T02:49:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以安装simsun字体为例<br>可以在网上下载，也可以在 windows 目录下找到对应字体，这里是从另一套系统上 copy一个simsun.ttf 文件。<br>可以用  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#fc-list :lang=zh</span><br></pre></td></tr></table></figure>
+<p>命令查看当前系统安装的中文字体<br>然后将字体文件拷贝到/usr/share/fonts/中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#mkdir /usr/share/fonts/my_fonts</span><br><span class="line">#cp /home/simsun.ttf my_fonts/</span><br><span class="line">#cd my_fonts/</span><br><span class="line">#mkfontscale </span><br><span class="line">#mkfontdir</span><br></pre></td></tr></table></figure>
+<p>然后再</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#fc-list :lang=zh</span><br></pre></td></tr></table></figure>
+<p>就可以看到刚安装的字体了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/21/Linux中安装字体/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-log4j显示mybatis-sql语句的配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -244,70 +324,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/19/mybatis-Mapped-Statements-collection-does-not-contain-value错误原因/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git-warning-LF-will-be-replaced-by-CRLF-in-问题的解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/Git-warning-LF-will-be-replaced-by-CRLF-in-问题的解决/">Git:warning: LF will be replaced by CRLF in 问题的解决</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/16/Git-warning-LF-will-be-replaced-by-CRLF-in-问题的解决/" class="archive-article-date">
-  	<time datetime="2018-05-16T12:27:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>按如下配置修改git配置就行了：</p>
-<pre><code>git config core.autocrlf false
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/16/Git-warning-LF-will-be-replaced-by-CRLF-in-问题的解决/">展开全文 >></a>
         </p>
       
 
@@ -619,7 +635,7 @@
       
         <h3 id="1-String-pool需要"><a href="#1-String-pool需要" class="headerlink" title="1.String pool需要"></a>1.String pool需要</h3><p>String pool(string intern pool)是一个方法区里的特殊的存储区域。当创建一个String,如果它已经在pool中存在，则会返回一存在String引用，相反，则会创建一个新的String,并返回该引用。<br>下面的代码将仅公在堆中创建一个String对象:  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;abcd&quot;;</span><br><span class="line">String s2 = &quot;abcd&quot;;</span><br></pre></td></tr></table></figure>
-<p>如果String不是immutable的，改变String的引用将导致另一个引用到错误的值。<br>
+<p>如果String不是immutable的，改变String的引用将导致另一个引用到错误的值。<br></p>
         
           <a class="article-more-a" href="/2018/03/03/Java中String为什么是immutable的/#more">more >></a>
         
@@ -692,7 +708,7 @@
 
         
         <a href="/2018/03/03/hello-world/" class="archive-article-date">
-  	<time datetime="2018-03-03T02:23:28.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
+  	<time datetime="2018-03-03T02:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
 </a>
         
       </header>
