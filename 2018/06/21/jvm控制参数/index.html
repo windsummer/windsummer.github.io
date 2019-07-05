@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/windsummer">
-  <title>Tag: Linux | Windsummer</title>
+  <title>jvm控制参数 | Windsummer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="/*coding 完美世界*/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Windsummer">
-<meta property="og:url" content="https://github.com/windsummer/tags/Linux/index.html">
+  <meta name="description" content="控制各区域的内存大小参数示例：  控制参数-Xms设置堆的最小空间大小。 -Xmx设置堆的最大空间大小。 -XX:NewSize设置新生代最小空间大小。 -XX:MaxNewSize设置新生代最大空间大小。 -XX:PermSize设置永久代最小空间大小。 -XX:MaxPermSize设置永久代最大空间大小。 -Xss设置每个线程的堆栈大小。 没有直接设置老年代的参数，但是可以设置堆空间大小和新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jvm控制参数">
+<meta property="og:url" content="https://github.com/windsummer/2018/06/21/jvm控制参数/index.html">
 <meta property="og:site_name" content="Windsummer">
-<meta property="og:description" content="/*coding 完美世界*/">
+<meta property="og:description" content="控制各区域的内存大小参数示例：  控制参数-Xms设置堆的最小空间大小。 -Xmx设置堆的最大空间大小。 -XX:NewSize设置新生代最小空间大小。 -XX:MaxNewSize设置新生代最大空间大小。 -XX:PermSize设置永久代最小空间大小。 -XX:MaxPermSize设置永久代最大空间大小。 -Xss设置每个线程的堆栈大小。 没有直接设置老年代的参数，但是可以设置堆空间大小和新">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/.com//jvm.png">
+<meta property="og:updated_time" content="2019-07-05T02:47:43.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windsummer">
-<meta name="twitter:description" content="/*coding 完美世界*/">
+<meta name="twitter:title" content="jvm控制参数">
+<meta name="twitter:description" content="控制各区域的内存大小参数示例：  控制参数-Xms设置堆的最小空间大小。 -Xmx设置堆的最大空间大小。 -XX:NewSize设置新生代最小空间大小。 -XX:MaxNewSize设置新生代最大空间大小。 -XX:PermSize设置永久代最小空间大小。 -XX:MaxPermSize设置永久代最大空间大小。 -Xss设置每个线程的堆栈大小。 没有直接设置老年代的参数，但是可以设置堆空间大小和新">
+<meta name="twitter:image" content="https://github.com/.com//jvm.png">
   
     <link rel="alternative" href="/atom.xml" title="Windsummer" type="application/atom+xml">
   
@@ -141,250 +144,145 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jvm控制参数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jvm控制参数
+    </h1>
+  
+
+        
+        <a href="/2018/06/21/jvm控制参数/" class="archive-article-date">
+  	<time datetime="2018-06-21T12:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-21</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>控制各区域的内存大小参数示例：</p>
+<p><img src="/.com//jvm.png" alt="JVM各区域控制参数"></p>
+<p>控制参数<br>-Xms设置堆的最小空间大小。</p>
+<p>-Xmx设置堆的最大空间大小。</p>
+<p>-XX:NewSize设置新生代最小空间大小。</p>
+<p>-XX:MaxNewSize设置新生代最大空间大小。</p>
+<p>-XX:PermSize设置永久代最小空间大小。</p>
+<p>-XX:MaxPermSize设置永久代最大空间大小。</p>
+<p>-Xss设置每个线程的堆栈大小。</p>
+<p>没有直接设置老年代的参数，但是可以设置堆空间大小和新生代空间大小两个参数来间接控制。</p>
+<p>  老年代空间大小=堆空间大小-年轻代大空间大小</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/08/Git重建master分支/" class="archive-article-date">
-  	<time datetime="2018-06-08T14:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/08/Git重建master分支/">Git重建master分支</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/windsummer/2018/06/21/jvm控制参数/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/05/Linux安装配置nginx/" class="archive-article-date">
-  	<time datetime="2018-06-05T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/20/NPM检查版本更新/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">NPM检查版本更新</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/05/Linux安装配置nginx/">Linux nginx安装配置</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/28/Linux中执行mysqldump定时任务/" class="archive-article-date">
-  	<time datetime="2018-05-28T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/28/Linux中执行mysqldump定时任务/">Linux中执行mysqldump定时任务</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/28/Linux配置sftp/" class="archive-article-date">
-  	<time datetime="2018-05-28T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/28/Linux配置sftp/">Linux sftp配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/27/Linux中执行mysqldump命令没找到解决方法/" class="archive-article-date">
-  	<time datetime="2018-05-27T13:05:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/27/Linux中执行mysqldump命令没找到解决方法/">Linux中执行mysqldump命令没找到解决方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/21/Linux中安装字体/" class="archive-article-date">
-  	<time datetime="2018-05-21T02:49:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/21/Linux中安装字体/">Linux中安装字体</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -407,9 +305,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

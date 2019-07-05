@@ -150,13 +150,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/21/jvm控制参数/">jvm控制参数</a>
+      <a class="article-title" href="/2018/06/21/jvm控制参数/">jvm控制参数</a>
     </h1>
   
 
         
-        <a href="/2019/06/21/jvm控制参数/" class="archive-article-date">
-  	<time datetime="2019-06-21T12:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-21</time>
+        <a href="/2018/06/21/jvm控制参数/" class="archive-article-date">
+  	<time datetime="2018-06-21T12:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-21</time>
 </a>
         
       </header>
@@ -186,7 +186,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/21/jvm控制参数/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/21/jvm控制参数/">展开全文 >></a>
         </p>
       
 
@@ -544,6 +544,83 @@ $   make install
 
 
   
+    <article id="post-Linux中执行mysqldump定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/28/Linux中执行mysqldump定时任务/">Linux中执行mysqldump定时任务</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/28/Linux中执行mysqldump定时任务/" class="archive-article-date">
+  	<time datetime="2018-05-28T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-新建数据备份脚本"><a href="#1-新建数据备份脚本" class="headerlink" title="1.新建数据备份脚本"></a>1.新建数据备份脚本</h3><p> (注意该脚本需要可执行权限)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">cd /root/backup/database/bak</span><br><span class="line">echo &quot;You are in bakmysql directory&quot;</span><br><span class="line">mv backup-testdb-* /root/backup/database/bakOld</span><br><span class="line">echo &quot;Old databases are moved to backup old folder&quot;</span><br><span class="line">Now=$(date +&quot;%Y-%m-%d&quot;)</span><br><span class="line">File=backup-testdb-$Now.sql.gz</span><br><span class="line">mysqldump -uroot -p&apos;123456&apos; --default-character-set=utf8 testdb | gzip &gt; $File</span><br><span class="line">echo &quot;Your database backup successfully completed&quot;</span><br><span class="line">SevenDays=$(date -d -7day  +&quot;%Y-%m-%d&quot;)</span><br><span class="line">if [ -f /root/backup/database/bakOld/backup-testdb-$SevenDays.sql ]</span><br><span class="line">then</span><br><span class="line">rm -rf /root/backup/database/bakOld/backup-testdb-$SevenDays.sql</span><br><span class="line">echo &quot;You have delete 7days ago bak file &quot;</span><br><span class="line">else</span><br><span class="line">echo &quot;7days ago bak file not exist &quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<h3 id="2-编辑定时任务"><a href="#2-编辑定时任务" class="headerlink" title="2.编辑定时任务"></a>2.编辑定时任务</h3><p>crontab -e </p>
+<p>设置定期执行的时间规则，添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#每天0点0分执行脚本</span><br><span class="line">0 0 * * * /root/backup/database/bk_testdb.sh</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/28/Linux中执行mysqldump定时任务/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux配置sftp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -596,83 +673,6 @@ $   make install
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/28/Linux配置sftp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux中执行mysqldump定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/28/Linux中执行mysqldump定时任务/">Linux中执行mysqldump定时任务</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/28/Linux中执行mysqldump定时任务/" class="archive-article-date">
-  	<time datetime="2018-05-28T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-新建数据备份脚本"><a href="#1-新建数据备份脚本" class="headerlink" title="1.新建数据备份脚本"></a>1.新建数据备份脚本</h3><p> (注意该脚本需要可执行权限)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">cd /root/backup/database/bak</span><br><span class="line">echo &quot;You are in bakmysql directory&quot;</span><br><span class="line">mv backup-testdb-* /root/backup/database/bakOld</span><br><span class="line">echo &quot;Old databases are moved to backup old folder&quot;</span><br><span class="line">Now=$(date +&quot;%Y-%m-%d&quot;)</span><br><span class="line">File=backup-testdb-$Now.sql.gz</span><br><span class="line">mysqldump -uroot -p&apos;123456&apos; --default-character-set=utf8 testdb | gzip &gt; $File</span><br><span class="line">echo &quot;Your database backup successfully completed&quot;</span><br><span class="line">SevenDays=$(date -d -7day  +&quot;%Y-%m-%d&quot;)</span><br><span class="line">if [ -f /root/backup/database/bakOld/backup-testdb-$SevenDays.sql ]</span><br><span class="line">then</span><br><span class="line">rm -rf /root/backup/database/bakOld/backup-testdb-$SevenDays.sql</span><br><span class="line">echo &quot;You have delete 7days ago bak file &quot;</span><br><span class="line">else</span><br><span class="line">echo &quot;7days ago bak file not exist &quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-<h3 id="2-编辑定时任务"><a href="#2-编辑定时任务" class="headerlink" title="2.编辑定时任务"></a>2.编辑定时任务</h3><p>crontab -e </p>
-<p>设置定期执行的时间规则，添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#每天0点0分执行脚本</span><br><span class="line">0 0 * * * /root/backup/database/bk_testdb.sh</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/28/Linux中执行mysqldump定时任务/">展开全文 >></a>
         </p>
       
 
@@ -994,10 +994,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -1006,7 +1002,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1019,6 +1015,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jackson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
             <div class="clearfix"></div>
