@@ -143,6 +143,356 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mysql产生随机日期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2019/07/05/mysql产生随机日期/">mysql产生随机日期</a>
+    </h1>
+  
+
+        
+        <a href="2019/07/05/mysql产生随机日期/" class="archive-article-date">
+  	<time datetime="2019-07-05T07:33:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">select 	</span><br><span class="line">concat(		</span><br><span class="line">FLOOR(2018 + (RAND() * 0)),&apos;-&apos;, 		</span><br><span class="line">LPAD(FLOOR(1 + (RAND() * 11)),2,0),&apos;-&apos;,	 </span><br><span class="line">LPAD(FLOOR(1 + (RAND() * 39)),2,0),	 </span><br><span class="line">&apos; &apos;,</span><br><span class="line">floor(10+rand()*23),&apos;:&apos;	 </span><br><span class="line">,floor(10+rand()*49),	 </span><br><span class="line">&apos;:&apos;,floor(10+rand()*49)	 </span><br><span class="line">) dt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2019/07/05/mysql产生随机日期/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Centos7-定时任务配置以及日志查看" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2018/07/22/Centos7-定时任务配置以及日志查看/">Centos7 定时任务配置以及日志查看</a>
+    </h1>
+  
+
+        
+        <a href="2018/07/22/Centos7-定时任务配置以及日志查看/" class="archive-article-date">
+  	<time datetime="2018-07-22T06:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>编辑 crontab -e </p>
+<p>日志查看 ：tail -f /var/spool/mail/root</p>
+<p>提示没有权限的问题：<br>chmod +x /data/shell/xxxxxxxxxxx.sh<br>或者crontab里面改成/bin/sh /data/shell/xxxxxxxxxxx.sh</p>
+<p>chmod +x /data/shell/xxxxxxxxxxx.sh<br>或者crontab里面改成/bin/sh /data/shell/xxxxxxxxxxx.sh</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2018/07/22/Centos7-定时任务配置以及日志查看/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux中解决mysqldump命令找不到的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2018/07/21/Linux中解决mysqldump命令找不到的问题/">Linux中解决mysqldump命令找不到的问题</a>
+    </h1>
+  
+
+        
+        <a href="2018/07/21/Linux中解决mysqldump命令找不到的问题/" class="archive-article-date">
+  	<time datetime="2018-07-21T02:03:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>直接输入命令mysqldump会发现提示命令不存在，是由于系统默认会查找/usr/bin下的命令。<br>如果这个命令不在这个目录下，自然会找不到命令，并报错。<br>解决办法：</p>
+<p><code>`</code><br>find  / -name mysqldump -print // 找到文件名称为mysql的文件<br>然后再用ln命令链接到/usr/bin下面。<br>ln -fs /usr/local/mysql/bin/mysqldump /usr/bin  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2018/07/21/Linux中解决mysqldump命令找不到的问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Docker安装nginx并挂载配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2018/07/10/Docker安装nginx并挂载配置/">Docker安装nginx并挂载配置</a>
+    </h1>
+  
+
+        
+        <a href="2018/07/10/Docker安装nginx并挂载配置/" class="archive-article-date">
+  	<time datetime="2018-07-10T12:17:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.安装境像 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
+<p>2.启动nginx容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run \ </span><br><span class="line">--name mynginx \ </span><br><span class="line">    -p 80:80 \     </span><br><span class="line">    -v /Users/workspace/docker/mynginx/nginx.conf:/etc/nginx/nginx.conf:ro \ </span><br><span class="line">    -v /Users/workspace/docker/mynginx/logs:/var/log/nginx:rw \ </span><br><span class="line">    -d nginx</span><br></pre></td></tr></table></figure>
+<p>3.交互</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -i -t mynginx bash</span><br></pre></td></tr></table></figure>
+<p>nginx目录参考： </p>
+<p>默认配置文件目录：<br>/etc/nginx/nginx.conf </p>
+<p>默认页面目录：<br>/usr/share/nginx/html </p>
+<p>默认log目录：<br>/var/log/nginx </p>
+<p>配置目录<br>/etc/nginx/conf.d</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2018/07/10/Docker安装nginx并挂载配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Docker删除images报错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2018/07/05/Docker删除images报错/">Docker删除images报错</a>
+    </h1>
+  
+
+        
+        <a href="2018/07/05/Docker删除images报错/" class="archive-article-date">
+  	<time datetime="2018-07-05T07:06:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Docker：删除images报错（Error response from daemon: conflict: unable to remove repository reference）</p>
+<p>原因：Docker无法删除images，由于是依赖container。</p>
+<p>1.停止所有container,这样才能删除image</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+<p>如果要删除所有container,则可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+<p>2.删除image<br>删除images，通过image的id来指定删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi imageid</span><br></pre></td></tr></table></figure>
+<p>想要删除untagged images，也就是那些id为的image的话可以用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi  $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &quot;&#123;print $3&#125;&quot;)</span><br></pre></td></tr></table></figure>
+<p>要删除所有的images,可以用以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2018/07/05/Docker删除images报错/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jvm控制参数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -544,370 +894,9 @@ $   make install
 
 
   
-    <article id="post-Linux配置sftp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/05/28/Linux配置sftp/">Linux sftp配置</a>
-    </h1>
-  
-
-        
-        <a href="2018/05/28/Linux配置sftp/" class="archive-article-date">
-  	<time datetime="2018-05-28T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-查看openssh版本，如果低于4-8p1，需要自行升级安装"><a href="#1-查看openssh版本，如果低于4-8p1，需要自行升级安装" class="headerlink" title="1.查看openssh版本，如果低于4.8p1，需要自行升级安装;"></a>1.查看openssh版本，如果低于4.8p1，需要自行升级安装;</h4><p>ssh -V </p>
-<h4 id="2-创建一个sftp组，并为该组创建一个用户sftpuser-不能使用ssh-且sftp登录后只能在自己的home目录下活动"><a href="#2-创建一个sftp组，并为该组创建一个用户sftpuser-不能使用ssh-且sftp登录后只能在自己的home目录下活动" class="headerlink" title="2.创建一个sftp组，并为该组创建一个用户sftpuser,不能使用ssh,且sftp登录后只能在自己的home目录下活动"></a>2.创建一个sftp组，并为该组创建一个用户sftpuser,不能使用ssh,且sftp登录后只能在自己的home目录下活动</h4><p>groupadd sftp<br>useradd -g sftp -s /bin/false sftpuser<br>passwd sftpuser </p>
-<h4 id="3-sftp组的用户目录统一指定到-data-sftp下，按用户名区分"><a href="#3-sftp组的用户目录统一指定到-data-sftp下，按用户名区分" class="headerlink" title="3.sftp组的用户目录统一指定到/data/sftp下，按用户名区分"></a>3.sftp组的用户目录统一指定到/data/sftp下，按用户名区分</h4><p>mkdir /data/sftp<br>cd /data/sftp<br>mkdir sftpuser<br>usermod -d /data/sftp/sftpuser sftpuser </p>
-<h4 id="4-配置sshd-config"><a href="#4-配置sshd-config" class="headerlink" title="4.配置sshd_config"></a>4.配置sshd_config</h4><p>编辑 /etc/ssh/sshd_config<br>注释掉  Subsystem      sftp    /usr/libexec/openssh/sftp-server  行<br>在UseDNS no后面添加以下几行：<br>Subsystem       sftp    internal-sftp<br>Match Group sftp<br>ChrootDirectory /data/sftp/%u<br>ForceCommand    internal-sftp<br>AllowTcpForwarding no<br>X11Forwarding no </p>
-<h4 id="5-设定Chroot目录权限"><a href="#5-设定Chroot目录权限" class="headerlink" title="5.设定Chroot目录权限"></a>5.设定Chroot目录权限</h4><p>chown root:sftp /data/sftp/sftpuser<br>chmod 755 /data/sftp/sftpuser </p>
-<h4 id="6-建立SFTP用户登入后可以写入的目录"><a href="#6-建立SFTP用户登入后可以写入的目录" class="headerlink" title="6.建立SFTP用户登入后可以写入的目录"></a>6.建立SFTP用户登入后可以写入的目录</h4><p>mkdir /data/sftp/sftpuser/upload<br>chown sftpuser:sftp /data/sftp/sftpuser/upload<br>chmod 755 /data/sftp/sftpuser/upload </p>
-<h4 id="7-重启sshd服务"><a href="#7-重启sshd服务" class="headerlink" title="7.重启sshd服务"></a>7.重启sshd服务</h4><p>service sshd restart  </p>
-<h4 id="8-连接服务器"><a href="#8-连接服务器" class="headerlink" title="8.连接服务器"></a>8.连接服务器</h4><p>sftp  -P 端口 sftpuser@IP</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/05/28/Linux配置sftp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux中执行mysqldump定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/05/28/Linux中执行mysqldump定时任务/">Linux中执行mysqldump定时任务</a>
-    </h1>
-  
-
-        
-        <a href="2018/05/28/Linux中执行mysqldump定时任务/" class="archive-article-date">
-  	<time datetime="2018-05-28T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-新建数据备份脚本"><a href="#1-新建数据备份脚本" class="headerlink" title="1.新建数据备份脚本"></a>1.新建数据备份脚本</h3><p> (注意该脚本需要可执行权限)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">cd /root/backup/database/bak</span><br><span class="line">echo &quot;You are in bakmysql directory&quot;</span><br><span class="line">mv backup-testdb-* /root/backup/database/bakOld</span><br><span class="line">echo &quot;Old databases are moved to backup old folder&quot;</span><br><span class="line">Now=$(date +&quot;%Y-%m-%d&quot;)</span><br><span class="line">File=backup-testdb-$Now.sql.gz</span><br><span class="line">mysqldump -uroot -p&apos;123456&apos; --default-character-set=utf8 testdb | gzip &gt; $File</span><br><span class="line">echo &quot;Your database backup successfully completed&quot;</span><br><span class="line">SevenDays=$(date -d -7day  +&quot;%Y-%m-%d&quot;)</span><br><span class="line">if [ -f /root/backup/database/bakOld/backup-testdb-$SevenDays.sql ]</span><br><span class="line">then</span><br><span class="line">rm -rf /root/backup/database/bakOld/backup-testdb-$SevenDays.sql</span><br><span class="line">echo &quot;You have delete 7days ago bak file &quot;</span><br><span class="line">else</span><br><span class="line">echo &quot;7days ago bak file not exist &quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
-<h3 id="2-编辑定时任务"><a href="#2-编辑定时任务" class="headerlink" title="2.编辑定时任务"></a>2.编辑定时任务</h3><p>crontab -e </p>
-<p>设置定期执行的时间规则，添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#每天0点0分执行脚本</span><br><span class="line">0 0 * * * /root/backup/database/bk_testdb.sh</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/05/28/Linux中执行mysqldump定时任务/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux中执行mysqldump命令没找到解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/05/27/Linux中执行mysqldump命令没找到解决方法/">Linux中执行mysqldump命令没找到解决方法</a>
-    </h1>
-  
-
-        
-        <a href="2018/05/27/Linux中执行mysqldump命令没找到解决方法/" class="archive-article-date">
-  	<time datetime="2018-05-27T13:05:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>直接输入命令mysqldump会发现提示命令不存在，是由于系统默认会查找/usr/bin下的命令，如果这个命令不在这个目录下，自然会找不到命令，并报错。知道了问题的所在，就直接去处理，先用一条find命令查找mysqldump的所载路径。</p>
-<p>find  / -name mysqldump -print // 找到文件名称为mysql的文件<br>然后再用ln命令链接到/usr/bin下面。<br>ln -fs /usr/local/mysql/bin/mysqldump /usr/bin  </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/05/27/Linux中执行mysqldump命令没找到解决方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Mac使用zsh后多次source执行解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/05/25/Mac使用zsh后多次source执行解决方案/">Mac使用zsh后多次执行解决方案</a>
-    </h1>
-  
-
-        
-        <a href="2018/05/25/Mac使用zsh后多次source执行解决方案/" class="archive-article-date">
-  	<time datetime="2018-05-25T12:02:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>执行vi ~/.zshrc打开.zshrc,将 source .bash_profile 粘贴到最下面，保存即可。<br>或者source ~/.bash_profille</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/05/25/Mac使用zsh后多次source执行解决方案/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Mac下安装homebrew及其使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/05/23/Mac下安装homebrew及其使用/">Mac下安装homebrew及其使用</a>
-    </h1>
-  
-
-        
-        <a href="2018/05/23/Mac下安装homebrew及其使用/" class="archive-article-date">
-  	<time datetime="2018-05-23T11:55:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1.安装brew"></a>1.安装brew</h3><p>打开Homebrew官网，复制代码安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-brew常用命令"><a href="#2-brew常用命令" class="headerlink" title="2.brew常用命令"></a>2.brew常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$brew install name         # 安装源码</span><br><span class="line">$brew info svn                # 显示软件的各种信息（包括版本、源码地址、依赖等等）</span><br><span class="line">$brew uninstall name     # 卸载软件</span><br><span class="line">$brew search name       # 搜索brew 支持的软件（支持模糊搜索）</span><br><span class="line">$brew list                       # 列出本机通过brew安装的所有软件</span><br><span class="line">$brew update                # brew自身更新</span><br><span class="line">$brew upgrade name    #更新安装过的软件(如果不加软件名，就更新所有可以更新的软件)</span><br><span class="line">$brew cleanup             #清除下载的缓存</span><br><span class="line">(PS:详见man brew)</span><br></pre></td></tr></table></figure>
-<h3 id="3-安装brew-cask"><a href="#3-安装brew-cask" class="headerlink" title="3.安装brew-cask"></a>3.安装brew-cask</h3><p>（安装完brew时，brew-cask已经安装好了，无需额外安装）</p>
-<h3 id="4-brew-cask的常用命令"><a href="#4-brew-cask的常用命令" class="headerlink" title="4.brew cask的常用命令"></a>4.brew cask的常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$brew cask search               # 列出所有可以被安装的软件</span><br><span class="line">$brew cask search name     # 查找所有和 name相关的应用</span><br><span class="line">$brew cask install name       # 下载安装软件</span><br><span class="line">$brew cask uninstall name   # 卸载软件</span><br><span class="line">$brew cask info app             # 列出应用的信息</span><br><span class="line">$brew cask list                      # 列出本机安装过的软件列表</span><br><span class="line">$brew cask cleanup              # 清除下载的缓存以及各种链接信息</span><br><span class="line">$brew cask uninstall name &amp;&amp; brew cask install name ＃更新程序 （目前homebrew-cask 并没有命令直接更新已安装的软件，软件更新主要是通过软件自身的完成更新）</span><br><span class="line">(PS:详见man brew cask)</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/05/23/Mac下安装homebrew及其使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1006,10 +995,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pdf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
@@ -1019,6 +1004,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jackson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pdf</a>
               </li>
             
             <div class="clearfix"></div>
