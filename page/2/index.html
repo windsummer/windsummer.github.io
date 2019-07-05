@@ -143,6 +143,105 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux安装配置nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/06/05/Linux安装配置nginx/">Linux nginx安装配置</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/06/05/Linux安装配置nginx/" class="archive-article-date">
+  	<time datetime="2018-06-05T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 一、安装准备</p>
+<p>首先由于nginx的一些模块依赖一些lib库，所以在安装nginx之前，必须先安装这些lib库，这些依赖库主要有g++、gcc、openssl-devel、pcre-devel和zlib-devel 所以执行如下命令安装</p>
+<pre><code>$   yum install gcc-c++  
+$   yum install pcre pcre-devel  
+$   yum install zlib zlib-devel  
+$   yum install openssl openssl--devel  
+</code></pre><p>二、安装Nginx</p>
+<p>安装之前，最好检查一下是否已经安装有nginx</p>
+<pre><code>$   find -name nginx  
+</code></pre><p>如果系统已经安装了nginx，那么就先卸载</p>
+<pre><code>$   yum remove nginx  
+</code></pre><p>首先进入/usr/local目录</p>
+<pre><code>$   cd /usr/local  
+</code></pre><p>从官网下载最新版的nginx</p>
+<pre><code>$   wget http://nginx.org/download/nginx-1.7.4.tar.gz  
+</code></pre><p>解压nginx压缩包</p>
+<pre><code>$   tar -zxvf nginx-1.7.4.tar.gz  
+</code></pre><p>会产生一个nginx-1.7.4 目录，这时进入nginx-1.7.4目录</p>
+<pre><code>$   cd  nginx-1.7.4  
+</code></pre><p>接下来安装，使用–prefix参数指定nginx安装的目录,make、make install安装</p>
+<pre><code>$   ./configure  $默认安装在/usr/local/nginx   
+$   make  
+$   make install      
+</code></pre><p>如果没有报错，顺利完成后，最好看一下nginx的安装目录</p>
+<pre><code>$   whereis nginx  
+</code></pre><p>安装完毕后，进入安装后目录（/usr/local/nginx）便可以启动或停止它了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/06/05/Linux安装配置nginx/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux中执行mysqldump定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -796,95 +895,6 @@
 
 
   
-    <article id="post-Pdf导出工具wkhtmltopdf的安装使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2018/03/11/Pdf导出工具wkhtmltopdf的安装使用/">Pdf导出工具wkhtmltopdf的安装使用</a>
-    </h1>
-  
-
-        
-        <a href="../../2018/03/11/Pdf导出工具wkhtmltopdf的安装使用/" class="archive-article-date">
-  	<time datetime="2018-03-11T03:28:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h4><p><a href="https://wkhtmltopdf.org/" target="_blank" rel="noopener">wkhtmltox</a>是一款将HTML导出为PDF或者图片的工具，可以根据提供的URL地址直接生成PDF文件，因此是一款比较方便的PDF导出工具。</p>
-<h4 id="二、安装部署（以CentOS-6为例）"><a href="#二、安装部署（以CentOS-6为例）" class="headerlink" title="二、安装部署（以CentOS 6为例）"></a>二、安装部署（以CentOS 6为例）</h4><ul>
-<li>1.从官网上下载安装包</li>
-<li>2.解压压缩包到指定目录 </li>
-<li><p>3.安装必要的依赖包  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install libXrender*  </span><br><span class="line">yum install fontconfig  </span><br><span class="line">yum install libXext</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.测试是否安装成功<br><code>wkhtmltopdf http://www.baidu.com /tmp/baidu.pdf</code></p>
-</li>
-<li>5.安装字体<br>如果导出的PDF文件时中文是乱码，需要安装字体<br>从网上或者windows系统里下载simsum.TTC字体文件上传到/usr/share/fonts/目录里就OK了.  </li>
-</ul>
-<h4 id="三、wkhtmltopdf的参数说明"><a href="#三、wkhtmltopdf的参数说明" class="headerlink" title="三、wkhtmltopdf的参数说明"></a>三、wkhtmltopdf的参数说明</h4><p>可以通过运行以下命令查看具体的参数说明：<br><code>wkhtmltopdf -H</code></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pdf</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="../../2018/03/11/Pdf导出工具wkhtmltopdf的安装使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="../../">&laquo; Prev</a><a class="page-number" href="../../">1</a><span class="page-number current">2</span><a class="page-number" href="../3/">3</a><a class="extend next" rel="next" href="../3/">Next &raquo;</a>
@@ -986,11 +996,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pdf</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">pdf</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -999,6 +1009,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Jackson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
               </li>
             
             <div class="clearfix"></div>

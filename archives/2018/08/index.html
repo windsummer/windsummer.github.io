@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/windsummer">
-  <title>Windsummer</title>
+  <title>Archives: 2018/8 | Windsummer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="/*coding 完美世界*/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Windsummer">
-<meta property="og:url" content="https://github.com/windsummer/index.html">
+<meta property="og:url" content="https://github.com/windsummer/archives/2018/08/index.html">
 <meta property="og:site_name" content="Windsummer">
 <meta property="og:description" content="/*coding 完美世界*/">
 <meta property="og:locale" content="zh-Hans">
@@ -58,9 +58,9 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="index.html">主页</a></li>
+				<li><a href="../../../index.html">主页</a></li>
 	        
-				<li><a href="/archives">所有文章</a></li>
+				<li><a href="../../../archives">所有文章</a></li>
 	        
 			</ul>
 		</nav>
@@ -124,9 +124,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="index.html">主页</a></li>
+					<li style="width: 50%"><a href="../../../index.html">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">所有文章</a></li>
+					<li style="width: 50%"><a href="../../../archives">所有文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -143,37 +143,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Springboot跨域设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href=".." class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="../../../2018/08/09/Springboot跨域设置/" class="archive-article-date">
+  	<time datetime="2018-08-09T03:51:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-09</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="2018/08/09/Springboot跨域设置/">Springboot跨域设置</a>
+      <a class="archive-article-title" href="../../../2018/08/09/Springboot跨域设置/">Springboot跨域设置</a>
     </h1>
   
 
-        
-        <a href="2018/08/09/Springboot跨域设置/" class="archive-article-date">
-  	<time datetime="2018-08-09T03:51:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Springboot 可以通过配置CORS的方式实现跨域。<br>在与vue前端联调过程中比较方便，当然vue也可以通过设置代理的方式实现跨域。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class CORSConfiguration extends WebMvcConfigurerAdapter&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void addCorsMappings(CorsRegistry registry) &#123;</span><br><span class="line">        registry.addMapping(&quot;/**&quot;)</span><br><span class="line">                .allowedMethods(&quot;*&quot;)</span><br><span class="line">                .allowedOrigins(&quot;*&quot;)</span><br><span class="line">                .allowedHeaders(&quot;*&quot;);</span><br><span class="line">        super.addCorsMappings(registry);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>addMapping：配置可以被跨域的路径，可以任意配置，可以具体到直接请求路径。<br>allowedMethods：允许所有的请求方法访问该跨域资源服务器，如：POST、GET、PUT、DELETE等。<br>allowedOrigins：允许所有的请求域名访问我们的跨域资源，可以固定单条或者多条内容.<br>allowedHeaders：允许所有的请求header访问，可以自定义设置任意请求头信息。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -185,697 +182,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/08/09/Springboot跨域设置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-mysql产生随机日期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/07/26/mysql产生随机日期/">mysql产生随机日期</a>
-    </h1>
-  
-
-        
-        <a href="2018/07/26/mysql产生随机日期/" class="archive-article-date">
-  	<time datetime="2018-07-26T09:12:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">select 	</span><br><span class="line">concat(		</span><br><span class="line">FLOOR(2018 + (RAND() * 0)),&apos;-&apos;, 		</span><br><span class="line">LPAD(FLOOR(1 + (RAND() * 11)),2,0),&apos;-&apos;,	 </span><br><span class="line">LPAD(FLOOR(1 + (RAND() * 39)),2,0),	 </span><br><span class="line">&apos; &apos;,</span><br><span class="line">floor(10+rand()*23),&apos;:&apos;	 </span><br><span class="line">,floor(10+rand()*49),	 </span><br><span class="line">&apos;:&apos;,floor(10+rand()*49)	 </span><br><span class="line">) dt;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/07/26/mysql产生随机日期/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Centos7-定时任务配置以及日志查看" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/07/22/Centos7-定时任务配置以及日志查看/">Centos7 定时任务配置以及日志查看</a>
-    </h1>
-  
-
-        
-        <a href="2018/07/22/Centos7-定时任务配置以及日志查看/" class="archive-article-date">
-  	<time datetime="2018-07-22T06:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>编辑 crontab -e </p>
-<p>日志查看 ：tail -f /var/spool/mail/root</p>
-<p>提示没有权限的问题：<br>chmod +x /data/shell/xxxxxxxxxxx.sh<br>或者crontab里面改成/bin/sh /data/shell/xxxxxxxxxxx.sh</p>
-<p>chmod +x /data/shell/xxxxxxxxxxx.sh<br>或者crontab里面改成/bin/sh /data/shell/xxxxxxxxxxx.sh</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/07/22/Centos7-定时任务配置以及日志查看/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux中解决mysqldump命令找不到的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/07/21/Linux中解决mysqldump命令找不到的问题/">Linux中解决mysqldump命令找不到的问题</a>
-    </h1>
-  
-
-        
-        <a href="2018/07/21/Linux中解决mysqldump命令找不到的问题/" class="archive-article-date">
-  	<time datetime="2018-07-21T02:03:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>直接输入命令mysqldump会发现提示命令不存在，是由于系统默认会查找/usr/bin下的命令。<br>如果这个命令不在这个目录下，自然会找不到命令，并报错。<br>解决办法：</p>
-<p><code>`</code><br>find  / -name mysqldump -print // 找到文件名称为mysql的文件<br>然后再用ln命令链接到/usr/bin下面。<br>ln -fs /usr/local/mysql/bin/mysqldump /usr/bin  </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/07/21/Linux中解决mysqldump命令找不到的问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Docker安装nginx并挂载配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/07/10/Docker安装nginx并挂载配置/">Docker安装nginx并挂载配置</a>
-    </h1>
-  
-
-        
-        <a href="2018/07/10/Docker安装nginx并挂载配置/" class="archive-article-date">
-  	<time datetime="2018-07-10T12:17:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.安装境像 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
-<p>2.启动nginx容器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run \ </span><br><span class="line">--name mynginx \ </span><br><span class="line">    -p 80:80 \     </span><br><span class="line">    -v /Users/workspace/docker/mynginx/nginx.conf:/etc/nginx/nginx.conf:ro \ </span><br><span class="line">    -v /Users/workspace/docker/mynginx/logs:/var/log/nginx:rw \ </span><br><span class="line">    -d nginx</span><br></pre></td></tr></table></figure>
-<p>3.交互</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -i -t mynginx bash</span><br></pre></td></tr></table></figure>
-<p>nginx目录参考： </p>
-<p>默认配置文件目录：<br>/etc/nginx/nginx.conf </p>
-<p>默认页面目录：<br>/usr/share/nginx/html </p>
-<p>默认log目录：<br>/var/log/nginx </p>
-<p>配置目录<br>/etc/nginx/conf.d</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/07/10/Docker安装nginx并挂载配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Docker删除images报错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/07/05/Docker删除images报错/">Docker删除images报错</a>
-    </h1>
-  
-
-        
-        <a href="2018/07/05/Docker删除images报错/" class="archive-article-date">
-  	<time datetime="2018-07-05T07:06:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Docker：删除images报错（Error response from daemon: conflict: unable to remove repository reference）</p>
-<p>原因：Docker无法删除images，由于是依赖container。</p>
-<p>1.停止所有container,这样才能删除image</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
-<p>如果要删除所有container,则可以使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
-<p>2.删除image<br>删除images，通过image的id来指定删除</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi imageid</span><br></pre></td></tr></table></figure>
-<p>想要删除untagged images，也就是那些id为的image的话可以用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi  $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &quot;&#123;print $3&#125;&quot;)</span><br></pre></td></tr></table></figure>
-<p>要删除所有的images,可以用以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/07/05/Docker删除images报错/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jvm控制参数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/06/21/jvm控制参数/">jvm控制参数</a>
-    </h1>
-  
-
-        
-        <a href="2018/06/21/jvm控制参数/" class="archive-article-date">
-  	<time datetime="2018-06-21T12:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>控制各区域的内存大小参数示例：</p>
-<p><img src="../img/jvm.png" alt="JVM各区域控制参数"></p>
-<p>控制参数<br>-Xms设置堆的最小空间大小。</p>
-<p>-Xmx设置堆的最大空间大小。</p>
-<p>-XX:NewSize设置新生代最小空间大小。</p>
-<p>-XX:MaxNewSize设置新生代最大空间大小。</p>
-<p>-XX:PermSize设置永久代最小空间大小。</p>
-<p>-XX:MaxPermSize设置永久代最大空间大小。</p>
-<p>-Xss设置每个线程的堆栈大小。</p>
-<p>没有直接设置老年代的参数，但是可以设置堆空间大小和新生代空间大小两个参数来间接控制。</p>
-<p>  老年代空间大小=堆空间大小-年轻代大空间大小</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/06/21/jvm控制参数/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-NPM检查版本更新" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/06/20/NPM检查版本更新/">NPM检查版本更新</a>
-    </h1>
-  
-
-        
-        <a href="2018/06/20/NPM检查版本更新/" class="archive-article-date">
-  	<time datetime="2018-06-20T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>查看目前可以更新的版本：<br>npm -g outdated<br>更新到指定版本：<br>npm -g install <a href="mailto:npm@4.4.4" target="_blank" rel="noopener">npm@4.4.4</a><br>npm -g install <a href="mailto:webpack@3.3.0" target="_blank" rel="noopener">webpack@3.3.0</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ npm -g outdated</span><br><span class="line">Package  Current  Wanted  Latest  Location</span><br><span class="line">eslint    3.19.0   4.2.0   4.2.0</span><br><span class="line">npm        3.8.9   5.3.0   5.3.0</span><br><span class="line">webpack    3.0.0   3.3.0   3.3.0</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/06/20/NPM检查版本更新/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue项目中引入bootstrap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/06/15/vue项目中引入bootstrap/">vue项目中引入bootstrap</a>
-    </h1>
-  
-
-        
-        <a href="2018/06/15/vue项目中引入bootstrap/" class="archive-article-date">
-  	<time datetime="2018-06-15T13:29:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于bootstrap依赖jquery，所以需要安装jquery.</p>
-<p>1.安装jquery bootstrap </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install jquery —save   </span><br><span class="line">cnpm install bootstrap@3.3 —save</span><br></pre></td></tr></table></figure>
-<p>2.配置jquery<br>(1)修改webpack.base.conf.js,添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plugins: [// 3. 配置全局使用 jquery</span><br><span class="line">  new webpack.ProvidePlugin(&#123;</span><br><span class="line">    $: &apos;jquery&apos;,</span><br><span class="line">    jQuery: &apos;jquery&apos;,</span><br><span class="line">    jquery: &apos;jquery&apos;,</span><br><span class="line">    &apos;window.jQuery&apos;: &apos;jquery&apos;</span><br><span class="line">  &#125;)]</span><br></pre></td></tr></table></figure>
-<p>3.main.js中添加  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &apos;jquery&apos;</span><br><span class="line">import &apos;bootstrap/dist/css/bootstrap.min.css&apos;</span><br><span class="line">import &apos;bootstrap/dist/js/bootstrap.min&apos;</span><br></pre></td></tr></table></figure>
-<p>执行完以上步骤，vue项目中已经引入bootstrap了，可以进行测试了</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/06/15/vue项目中引入bootstrap/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git重建master分支" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2018/06/08/Git重建master分支/">Git重建master分支</a>
-    </h1>
-  
-
-        
-        <a href="2018/06/08/Git重建master分支/" class="archive-article-date">
-  	<time datetime="2018-06-08T14:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有时候因为各种原因，我们希望删除原来的master分支，以release为基础重建一个master分支。以下是具体操作方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//删除本地master分支</span><br><span class="line">git branch -d master </span><br><span class="line">//删除远程分支 </span><br><span class="line">git push origin :master </span><br><span class="line"></span><br><span class="line">//在release的基础上重建一个master分支</span><br><span class="line">git checkout release </span><br><span class="line">git checkout -b master </span><br><span class="line"></span><br><span class="line">//将本地分支推送到远程</span><br><span class="line">git push origin master:master</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2018/06/08/Git重建master分支/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -897,9 +216,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
