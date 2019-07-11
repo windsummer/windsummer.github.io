@@ -143,6 +143,381 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Docker删除images报错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/07/05/Docker删除images报错/">Docker删除images报错</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/07/05/Docker删除images报错/" class="archive-article-date">
+  	<time datetime="2018-07-05T07:06:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Docker：删除images报错（Error response from daemon: conflict: unable to remove repository reference）</p>
+<p>原因：Docker无法删除images，由于是依赖container。</p>
+<p>1.停止所有container,这样才能删除image</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+<p>如果要删除所有container,则可以使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+<p>2.删除image<br>删除images，通过image的id来指定删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi imageid</span><br></pre></td></tr></table></figure>
+<p>想要删除untagged images，也就是那些id为的image的话可以用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi  $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &quot;&#123;print $3&#125;&quot;)</span><br></pre></td></tr></table></figure>
+<p>要删除所有的images,可以用以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -q)</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/07/05/Docker删除images报错/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-jvm控制参数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/06/21/jvm控制参数/">jvm控制参数</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/06/21/jvm控制参数/" class="archive-article-date">
+  	<time datetime="2018-06-21T12:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>控制各区域的内存大小参数示例：</p>
+<p><img src="../img/jvm.png" alt="JVM各区域控制参数"></p>
+<p>控制参数<br>-Xms设置堆的最小空间大小。</p>
+<p>-Xmx设置堆的最大空间大小。</p>
+<p>-XX:NewSize设置新生代最小空间大小。</p>
+<p>-XX:MaxNewSize设置新生代最大空间大小。</p>
+<p>-XX:PermSize设置永久代最小空间大小。</p>
+<p>-XX:MaxPermSize设置永久代最大空间大小。</p>
+<p>-Xss设置每个线程的堆栈大小。</p>
+<p>没有直接设置老年代的参数，但是可以设置堆空间大小和新生代空间大小两个参数来间接控制。</p>
+<p>  老年代空间大小=堆空间大小-年轻代大空间大小</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/06/21/jvm控制参数/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-NPM检查版本更新" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/06/20/NPM检查版本更新/">NPM检查版本更新</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/06/20/NPM检查版本更新/" class="archive-article-date">
+  	<time datetime="2018-06-20T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>查看目前可以更新的版本：<br>npm -g outdated<br>更新到指定版本：<br>npm -g install <a href="mailto:npm@4.4.4" target="_blank" rel="noopener">npm@4.4.4</a><br>npm -g install <a href="mailto:webpack@3.3.0" target="_blank" rel="noopener">webpack@3.3.0</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ npm -g outdated</span><br><span class="line">Package  Current  Wanted  Latest  Location</span><br><span class="line">eslint    3.19.0   4.2.0   4.2.0</span><br><span class="line">npm        3.8.9   5.3.0   5.3.0</span><br><span class="line">webpack    3.0.0   3.3.0   3.3.0</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/06/20/NPM检查版本更新/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue项目中引入bootstrap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/06/15/vue项目中引入bootstrap/">vue项目中引入bootstrap</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/06/15/vue项目中引入bootstrap/" class="archive-article-date">
+  	<time datetime="2018-06-15T13:29:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于bootstrap依赖jquery，所以需要安装jquery.</p>
+<p>1.安装jquery bootstrap </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install jquery —save   </span><br><span class="line">cnpm install bootstrap@3.3 —save</span><br></pre></td></tr></table></figure>
+<p>2.配置jquery<br>(1)修改webpack.base.conf.js,添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plugins: [// 3. 配置全局使用 jquery</span><br><span class="line">  new webpack.ProvidePlugin(&#123;</span><br><span class="line">    $: &apos;jquery&apos;,</span><br><span class="line">    jQuery: &apos;jquery&apos;,</span><br><span class="line">    jquery: &apos;jquery&apos;,</span><br><span class="line">    &apos;window.jQuery&apos;: &apos;jquery&apos;</span><br><span class="line">  &#125;)]</span><br></pre></td></tr></table></figure>
+<p>3.main.js中添加  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &apos;jquery&apos;</span><br><span class="line">import &apos;bootstrap/dist/css/bootstrap.min.css&apos;</span><br><span class="line">import &apos;bootstrap/dist/js/bootstrap.min&apos;</span><br></pre></td></tr></table></figure>
+<p>执行完以上步骤，vue项目中已经引入bootstrap了，可以进行测试了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/06/15/vue项目中引入bootstrap/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git重建master分支" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/06/08/Git重建master分支/">Git重建master分支</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/06/08/Git重建master分支/" class="archive-article-date">
+  	<time datetime="2018-06-08T14:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时候因为各种原因，我们希望删除原来的master分支，以release为基础重建一个master分支。以下是具体操作方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//删除本地master分支</span><br><span class="line">git branch -d master </span><br><span class="line">//删除远程分支 </span><br><span class="line">git push origin :master </span><br><span class="line"></span><br><span class="line">//在release的基础上重建一个master分支</span><br><span class="line">git checkout release </span><br><span class="line">git checkout -b master </span><br><span class="line"></span><br><span class="line">//将本地分支推送到远程</span><br><span class="line">git push origin master:master</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/06/08/Git重建master分支/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux安装配置nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -538,363 +913,6 @@ $   make install
 
 
   
-    <article id="post-Mac下安装homebrew及其使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2018/05/23/Mac下安装homebrew及其使用/">Mac下安装homebrew及其使用</a>
-    </h1>
-  
-
-        
-        <a href="../../2018/05/23/Mac下安装homebrew及其使用/" class="archive-article-date">
-  	<time datetime="2018-05-23T11:55:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1.安装brew"></a>1.安装brew</h3><p>打开Homebrew官网，复制代码安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-brew常用命令"><a href="#2-brew常用命令" class="headerlink" title="2.brew常用命令"></a>2.brew常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$brew install name         # 安装源码</span><br><span class="line">$brew info svn                # 显示软件的各种信息（包括版本、源码地址、依赖等等）</span><br><span class="line">$brew uninstall name     # 卸载软件</span><br><span class="line">$brew search name       # 搜索brew 支持的软件（支持模糊搜索）</span><br><span class="line">$brew list                       # 列出本机通过brew安装的所有软件</span><br><span class="line">$brew update                # brew自身更新</span><br><span class="line">$brew upgrade name    #更新安装过的软件(如果不加软件名，就更新所有可以更新的软件)</span><br><span class="line">$brew cleanup             #清除下载的缓存</span><br><span class="line">(PS:详见man brew)</span><br></pre></td></tr></table></figure>
-<h3 id="3-安装brew-cask"><a href="#3-安装brew-cask" class="headerlink" title="3.安装brew-cask"></a>3.安装brew-cask</h3><p>（安装完brew时，brew-cask已经安装好了，无需额外安装）</p>
-<h3 id="4-brew-cask的常用命令"><a href="#4-brew-cask的常用命令" class="headerlink" title="4.brew cask的常用命令"></a>4.brew cask的常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$brew cask search               # 列出所有可以被安装的软件</span><br><span class="line">$brew cask search name     # 查找所有和 name相关的应用</span><br><span class="line">$brew cask install name       # 下载安装软件</span><br><span class="line">$brew cask uninstall name   # 卸载软件</span><br><span class="line">$brew cask info app             # 列出应用的信息</span><br><span class="line">$brew cask list                      # 列出本机安装过的软件列表</span><br><span class="line">$brew cask cleanup              # 清除下载的缓存以及各种链接信息</span><br><span class="line">$brew cask uninstall name &amp;&amp; brew cask install name ＃更新程序 （目前homebrew-cask 并没有命令直接更新已安装的软件，软件更新主要是通过软件自身的完成更新）</span><br><span class="line">(PS:详见man brew cask)</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="../../2018/05/23/Mac下安装homebrew及其使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux中安装字体" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2018/05/21/Linux中安装字体/">Linux中安装字体</a>
-    </h1>
-  
-
-        
-        <a href="../../2018/05/21/Linux中安装字体/" class="archive-article-date">
-  	<time datetime="2018-05-21T02:49:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以安装simsun字体为例<br>可以在网上下载，也可以在 windows 目录下找到对应字体，这里是从另一套系统上 copy一个simsun.ttf 文件。<br>可以用  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#fc-list :lang=zh</span><br></pre></td></tr></table></figure>
-<p>命令查看当前系统安装的中文字体<br>然后将字体文件拷贝到/usr/share/fonts/中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#mkdir /usr/share/fonts/my_fonts</span><br><span class="line">#cp /home/simsun.ttf my_fonts/</span><br><span class="line">#cd my_fonts/</span><br><span class="line">#mkfontscale </span><br><span class="line">#mkfontdir</span><br></pre></td></tr></table></figure>
-<p>然后再</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#fc-list :lang=zh</span><br></pre></td></tr></table></figure>
-<p>就可以看到刚安装的字体了</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="../../2018/05/21/Linux中安装字体/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-log4j显示mybatis-sql语句的配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2018/05/20/log4j显示mybatis-sql语句的配置/">log4j显示mybatis sql语句的配置</a>
-    </h1>
-  
-
-        
-        <a href="../../2018/05/20/log4j显示mybatis-sql语句的配置/" class="archive-article-date">
-  	<time datetime="2018-05-20T12:38:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">log4j.rootCategory=info, stdout , R</span><br><span class="line"></span><br><span class="line">log4j.appender.stdout=org.apache.log4j.ConsoleAppender</span><br><span class="line">log4j.appender.stdout.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern=[QC] %p [%t] %C.%M(%L) | %m%n</span><br><span class="line"></span><br><span class="line">log4j.appender.R=org.apache.log4j.DailyRollingFileAppender</span><br><span class="line">log4j.appender.R.File=D:/my_log.log</span><br><span class="line">log4j.appender.R.layout=org.apache.log4j.PatternLayout</span><br><span class="line">log4j.appender.R.layout.ConversionPattern=%d-[TS] %p %t %c - %m%n</span><br><span class="line"></span><br><span class="line">log4j.logger.com.ibatis=debug</span><br><span class="line">log4j.logger.com.ibatis.common.jdbc.SimpleDataSource=debug</span><br><span class="line">log4j.logger.com.ibatis.common.jdbc.ScriptRunner=debug</span><br><span class="line">log4j.logger.com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate=debug</span><br><span class="line"></span><br><span class="line">log4j.logger.java.sql.Connection=debug</span><br><span class="line">log4j.logger.java.sql.Statement=debug</span><br><span class="line">log4j.logger.java.sql.PreparedStatement=debug,stdout</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="../../2018/05/20/log4j显示mybatis-sql语句的配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mybatis-Mapped-Statements-collection-does-not-contain-value错误原因" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2018/05/19/mybatis-Mapped-Statements-collection-does-not-contain-value错误原因/">mybatis-Mapped Statements collection does not contain value错误原因</a>
-    </h1>
-  
-
-        
-        <a href="../../2018/05/19/mybatis-Mapped-Statements-collection-does-not-contain-value错误原因/" class="archive-article-date">
-  	<time datetime="2018-05-19T03:34:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> Mapped Statements collection does not contain value for后面是什么类什么方法之类的：<br>错误原因有几种： </p>
-<p>1.mapper.xml中没有加入namespace </p>
-<p>2.mapper.xml中的方法和接口mapper的方法不对应 </p>
-<p>3.mapper.xml没有加入到mybatis-config.xml中(即总的配置文件)，例外：配置了mapper文件的包路径的除外 </p>
-<p>4.mapper.xml文件名和所写的mapper名称不相同。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="../../2018/05/19/mybatis-Mapped-Statements-collection-does-not-contain-value错误原因/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Spring-Jackson使用自定义objectMapper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2018/05/14/Spring-Jackson使用自定义objectMapper/">Spring Jackson使用自定义objectMapper</a>
-    </h1>
-  
-
-        
-        <a href="../../2018/05/14/Spring-Jackson使用自定义objectMapper/" class="archive-article-date">
-  	<time datetime="2018-05-14T07:08:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-spring-mvc-xml中添加配置"><a href="#1-spring-mvc-xml中添加配置" class="headerlink" title="1.spring-mvc.xml中添加配置"></a>1.spring-mvc.xml中添加配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;mvc:annotation-driven &gt;</span><br><span class="line">    &lt;mvc:message-converters&gt;</span><br><span class="line">        &lt;bean class=&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;&gt;</span><br><span class="line">            &lt;!-- 解决IE下载JSON文件的问题--&gt;</span><br><span class="line">            &lt;property name=&quot;supportedMediaTypes&quot;&gt;</span><br><span class="line">                &lt;list&gt;</span><br><span class="line">                    &lt;value&gt;application/json;charset=UTF-8&lt;/value&gt;</span><br><span class="line">                    &lt;value&gt;text/html;charset=UTF-8&lt;/value&gt;</span><br><span class="line">                &lt;/list&gt;</span><br><span class="line">            &lt;/property&gt;</span><br><span class="line">            &lt;property name=&quot;objectMapper&quot;&gt;</span><br><span class="line">                &lt;bean class=&quot;com.config.MyObjectMapper&quot;&gt;</span><br><span class="line">                    &lt;property name=&quot;dateFormat&quot;&gt;</span><br><span class="line">                        &lt;bean class=&quot;java.text.SimpleDateFormat&quot;&gt;</span><br><span class="line">                            &lt;constructor-arg type=&quot;java.lang.String&quot; value=&quot;yyyy-MM-dd&quot; /&gt;</span><br><span class="line">                        &lt;/bean&gt;</span><br><span class="line">                    &lt;/property&gt;</span><br><span class="line">                &lt;/bean&gt;</span><br><span class="line">            &lt;/property&gt;</span><br><span class="line">        &lt;/bean&gt;</span><br><span class="line">    &lt;/mvc:message-converters&gt;</span><br><span class="line">&lt;/mvc:annotation-driven&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-自定义的objectMapper"><a href="#2-自定义的objectMapper" class="headerlink" title="2.自定义的objectMapper"></a>2.自定义的objectMapper</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class MyObjectMapper extends ObjectMapper&#123;</span><br><span class="line">    public MyObjectMapper() &#123;</span><br><span class="line">        //设置null值不参与序列化(字段不被显示)</span><br><span class="line">        //this.setSerializationInclusion(JsonInclude.Include.NON_NULL);</span><br><span class="line"></span><br><span class="line">        // 禁用空对象转换json校验</span><br><span class="line">        this.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);</span><br><span class="line">        //忽略对象中没有的字段</span><br><span class="line">        this.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);</span><br><span class="line">        //避免找不到枚举对应值下的异常问题</span><br><span class="line">        this.configure(DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_AS_NULL,true);</span><br><span class="line">        SimpleModule simpleModule = new SimpleModule();</span><br><span class="line">        simpleModule.addSerializer(Long.class, ToStringSerializer.instance);</span><br><span class="line">        simpleModule.addSerializer(Long.TYPE,ToStringSerializer.instance);</span><br><span class="line">        this.registerModule(simpleModule);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Jackson</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="../../2018/05/14/Spring-Jackson使用自定义objectMapper/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="../../">&laquo; Prev</a><a class="page-number" href="../../">1</a><span class="page-number current">2</span><a class="page-number" href="../3/">3</a><a class="extend next" rel="next" href="../3/">Next &raquo;</a>
@@ -1000,7 +1018,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pdf</a>
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1012,7 +1030,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+                <a href="javascript:void(0)" class="js-tag color4">pdf</a>
               </li>
             
             <div class="clearfix"></div>
