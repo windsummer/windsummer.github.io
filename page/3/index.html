@@ -143,6 +143,302 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux中执行mysqldump定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/05/28/Linux中执行mysqldump定时任务/">Linux中执行mysqldump定时任务</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/05/28/Linux中执行mysqldump定时任务/" class="archive-article-date">
+  	<time datetime="2018-05-28T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-新建数据备份脚本"><a href="#1-新建数据备份脚本" class="headerlink" title="1.新建数据备份脚本"></a>1.新建数据备份脚本</h3><p> (注意该脚本需要可执行权限)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">cd /root/backup/database/bak</span><br><span class="line">echo &quot;You are in bakmysql directory&quot;</span><br><span class="line">mv backup-testdb-* /root/backup/database/bakOld</span><br><span class="line">echo &quot;Old databases are moved to backup old folder&quot;</span><br><span class="line">Now=$(date +&quot;%Y-%m-%d&quot;)</span><br><span class="line">File=backup-testdb-$Now.sql.gz</span><br><span class="line">mysqldump -uroot -p&apos;123456&apos; --default-character-set=utf8 testdb | gzip &gt; $File</span><br><span class="line">echo &quot;Your database backup successfully completed&quot;</span><br><span class="line">SevenDays=$(date -d -7day  +&quot;%Y-%m-%d&quot;)</span><br><span class="line">if [ -f /root/backup/database/bakOld/backup-testdb-$SevenDays.sql ]</span><br><span class="line">then</span><br><span class="line">rm -rf /root/backup/database/bakOld/backup-testdb-$SevenDays.sql</span><br><span class="line">echo &quot;You have delete 7days ago bak file &quot;</span><br><span class="line">else</span><br><span class="line">echo &quot;7days ago bak file not exist &quot;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<h3 id="2-编辑定时任务"><a href="#2-编辑定时任务" class="headerlink" title="2.编辑定时任务"></a>2.编辑定时任务</h3><p>crontab -e </p>
+<p>设置定期执行的时间规则，添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#每天0点0分执行脚本</span><br><span class="line">0 0 * * * /root/backup/database/bk_testdb.sh</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/05/28/Linux中执行mysqldump定时任务/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux配置sftp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/05/28/Linux配置sftp/">Linux sftp配置</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/05/28/Linux配置sftp/" class="archive-article-date">
+  	<time datetime="2018-05-28T11:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-查看openssh版本，如果低于4-8p1，需要自行升级安装"><a href="#1-查看openssh版本，如果低于4-8p1，需要自行升级安装" class="headerlink" title="1.查看openssh版本，如果低于4.8p1，需要自行升级安装;"></a>1.查看openssh版本，如果低于4.8p1，需要自行升级安装;</h4><p>ssh -V </p>
+<h4 id="2-创建一个sftp组，并为该组创建一个用户sftpuser-不能使用ssh-且sftp登录后只能在自己的home目录下活动"><a href="#2-创建一个sftp组，并为该组创建一个用户sftpuser-不能使用ssh-且sftp登录后只能在自己的home目录下活动" class="headerlink" title="2.创建一个sftp组，并为该组创建一个用户sftpuser,不能使用ssh,且sftp登录后只能在自己的home目录下活动"></a>2.创建一个sftp组，并为该组创建一个用户sftpuser,不能使用ssh,且sftp登录后只能在自己的home目录下活动</h4><p>groupadd sftp<br>useradd -g sftp -s /bin/false sftpuser<br>passwd sftpuser </p>
+<h4 id="3-sftp组的用户目录统一指定到-data-sftp下，按用户名区分"><a href="#3-sftp组的用户目录统一指定到-data-sftp下，按用户名区分" class="headerlink" title="3.sftp组的用户目录统一指定到/data/sftp下，按用户名区分"></a>3.sftp组的用户目录统一指定到/data/sftp下，按用户名区分</h4><p>mkdir /data/sftp<br>cd /data/sftp<br>mkdir sftpuser<br>usermod -d /data/sftp/sftpuser sftpuser </p>
+<h4 id="4-配置sshd-config"><a href="#4-配置sshd-config" class="headerlink" title="4.配置sshd_config"></a>4.配置sshd_config</h4><p>编辑 /etc/ssh/sshd_config<br>注释掉  Subsystem      sftp    /usr/libexec/openssh/sftp-server  行<br>在UseDNS no后面添加以下几行：<br>Subsystem       sftp    internal-sftp<br>Match Group sftp<br>ChrootDirectory /data/sftp/%u<br>ForceCommand    internal-sftp<br>AllowTcpForwarding no<br>X11Forwarding no </p>
+<h4 id="5-设定Chroot目录权限"><a href="#5-设定Chroot目录权限" class="headerlink" title="5.设定Chroot目录权限"></a>5.设定Chroot目录权限</h4><p>chown root:sftp /data/sftp/sftpuser<br>chmod 755 /data/sftp/sftpuser </p>
+<h4 id="6-建立SFTP用户登入后可以写入的目录"><a href="#6-建立SFTP用户登入后可以写入的目录" class="headerlink" title="6.建立SFTP用户登入后可以写入的目录"></a>6.建立SFTP用户登入后可以写入的目录</h4><p>mkdir /data/sftp/sftpuser/upload<br>chown sftpuser:sftp /data/sftp/sftpuser/upload<br>chmod 755 /data/sftp/sftpuser/upload </p>
+<h4 id="7-重启sshd服务"><a href="#7-重启sshd服务" class="headerlink" title="7.重启sshd服务"></a>7.重启sshd服务</h4><p>service sshd restart  </p>
+<h4 id="8-连接服务器"><a href="#8-连接服务器" class="headerlink" title="8.连接服务器"></a>8.连接服务器</h4><p>sftp  -P 端口 sftpuser@IP</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/05/28/Linux配置sftp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux中执行mysqldump命令没找到解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/05/27/Linux中执行mysqldump命令没找到解决方法/">Linux中执行mysqldump命令没找到解决方法</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/05/27/Linux中执行mysqldump命令没找到解决方法/" class="archive-article-date">
+  	<time datetime="2018-05-27T13:05:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>直接输入命令mysqldump会发现提示命令不存在，是由于系统默认会查找/usr/bin下的命令，如果这个命令不在这个目录下，自然会找不到命令，并报错。知道了问题的所在，就直接去处理，先用一条find命令查找mysqldump的所载路径。</p>
+<p>find  / -name mysqldump -print // 找到文件名称为mysql的文件<br>然后再用ln命令链接到/usr/bin下面。<br>ln -fs /usr/local/mysql/bin/mysqldump /usr/bin  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/05/27/Linux中执行mysqldump命令没找到解决方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Mac使用zsh后多次source执行解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../2018/05/25/Mac使用zsh后多次source执行解决方案/">Mac使用zsh后多次执行解决方案</a>
+    </h1>
+  
+
+        
+        <a href="../../2018/05/25/Mac使用zsh后多次source执行解决方案/" class="archive-article-date">
+  	<time datetime="2018-05-25T12:02:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>执行vi ~/.zshrc打开.zshrc,将 source .bash_profile 粘贴到最下面，保存即可。<br>或者source ~/.bash_profille</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../2018/05/25/Mac使用zsh后多次source执行解决方案/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Mac下安装homebrew及其使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -589,251 +885,9 @@
 
 
   
-    <article id="post-Java到底是值传递还是引用传递" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2018/03/05/Java到底是值传递还是引用传递/">Java到底是值传递还是引用传递</a>
-    </h1>
-  
-
-        
-        <a href="../../2018/03/05/Java到底是值传递还是引用传递/" class="archive-article-date">
-  	<time datetime="2018-03-05T09:52:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文参考地址：  </p>
-<ul>
-<li><a href="https://www.programcreek.com/2013/09/string-is-passed-by-reference-in-java/" target="_blank" rel="noopener">String is passed by ‘reference’ in java</a>  </li>
-<li><a href="https://www.zhihu.com/question/31203609/answer/50992895" target="_blank" rel="noopener">Java 到底是值传递还是引用传递？ - Intopass的回答 - 知乎
-</a></li>
-</ul>
-<h4 id="一、基本类型和引用类型的不同之处"><a href="#一、基本类型和引用类型的不同之处" class="headerlink" title="一、基本类型和引用类型的不同之处"></a>一、基本类型和引用类型的不同之处</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int num = 10;</span><br><span class="line">String str = &quot;hello&quot;;</span><br></pre></td></tr></table></figure>
-<p>num 是基本类型，值就直接保存在变量中。<br>str 是引用类型，变量中保存的是实际对象的地址。（一般称这种对象为”引用”，引用指向实际对象，实际对象中保存着内容。）</p>
-<h4 id="二、赋值运算符-的作用"><a href="#二、赋值运算符-的作用" class="headerlink" title="二、赋值运算符=的作用"></a>二、赋值运算符=的作用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num=20;</span><br><span class="line">str =&quot;java&quot;;</span><br></pre></td></tr></table></figure>
-<p>对于基本类型num,赋值运算符会直接改变变量的值，原来的值被覆盖掉。<br>对于引用类型str,赋值运算答会改变引用中所保存的地址，原来的地址被覆盖掉，但是原来的对象不会被改变。（hello字符串对象没有改变，没有被任何引用指向的对象是垃圾会被回收）</p>
-        
-          <a class="article-more-a" href="../../2018/03/05/Java到底是值传递还是引用传递/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="../../2018/03/05/Java到底是值传递还是引用传递/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中String为什么是immutable的" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2018/03/03/Java中String为什么是immutable的/">Java中String为什么是immutable的</a>
-    </h1>
-  
-
-        
-        <a href="../../2018/03/03/Java中String为什么是immutable的/" class="archive-article-date">
-  	<time datetime="2018-03-03T09:24:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-String-pool需要"><a href="#1-String-pool需要" class="headerlink" title="1.String pool需要"></a>1.String pool需要</h3><p>String pool(string intern pool)是一个方法区里的特殊的存储区域。当创建一个String,如果它已经在pool中存在，则会返回一存在String引用，相反，则会创建一个新的String,并返回该引用。<br>下面的代码将仅公在堆中创建一个String对象:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s1 = &quot;abcd&quot;;</span><br><span class="line">String s2 = &quot;abcd&quot;;</span><br></pre></td></tr></table></figure>
-<p>如果String不是immutable的，改变String的引用将导致另一个引用到错误的值。<br>
-        
-          <a class="article-more-a" href="../../2018/03/03/Java中String为什么是immutable的/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="../../2018/03/03/Java中String为什么是immutable的/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="../../2018/03/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="../../2018/03/03/hello-world/" class="archive-article-date">
-  	<time datetime="2018-03-03T02:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是一个用<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>搭建的个人博客网站,我会不定期的更新一些技术文章!<br> 通过Hexo的<a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a> 可以了解更多的信息！<br>以下是hexo的一些快速使用指南。</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="../../2018/03/03/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="../2/">&laquo; Prev</a><a class="page-number" href="../../">1</a><a class="page-number" href="../2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="../2/">&laquo; Prev</a><a class="page-number" href="../../">1</a><a class="page-number" href="../2/">2</a><span class="page-number current">3</span><a class="page-number" href="../4/">4</a><a class="extend next" rel="next" href="../4/">Next &raquo;</a>
     </nav>
   
 
@@ -936,10 +990,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
@@ -948,7 +998,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pdf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
             
             <div class="clearfix"></div>
